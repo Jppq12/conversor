@@ -1,0 +1,92 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --fundo: #0b111a;
+    --painel: #151f2b;
+    --elementos: #0B0F14;
+    --destaque: #00b8d4;
+    --texto: #ffffff;
+}
+
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background:
+        radial-gradient(ellipse at 50% 45%, #1b2b3d 0%, transparent 65%),
+        var(--fundo);
+    min-height: 100vh;
+    color: var(--texto);
+}
+
+header {
+    background: linear-gradient(90deg, #0b0f14, #142333, #0b0f14);
+    text-align: center;
+    padding: 20px;
+    border-bottom: 1px solid #263c50;
+    box-shadow: 0 4px 15px #00000050;
+    position: relative;
+}
+
+header::after {
+    content: "";                /* Cria um elemento vazio */
+    position: absolute;         /* Posicionamento absoluto */
+    bottom: 0;                  /* Alinha na parte inferior */
+    left: 35%;                  /* Distância de 35% da esquerda */
+    width: 30%;                 /* Ocupa 30% da largura */
+    height: 2px;                /* Altura de 2 pixels */
+    background: var(--destaque); /* Cor de destaque */
+    box-shadow: 0 0 10px var(--destaque); /* Efeito de brilho */
+}
+
+main {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr minmax(0,80vw) 1fr;
+    min-height: 70vh;
+    
+}
+
+section#conv {
+    grid-column: 2;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--elementos);
+    border-radius: 8px;
+    padding: 10px 10px;
+    box-shadow: 0 10px 35px #00000060,
+                0 0 15px #00b8d425; 
+}
+
+#seletor-moeda{
+    display: flex;
+    gap: 15px;
+    padding: 10px 0px 20px 0px;
+}
+
+select,input {
+    padding: 2px;
+    background-color: var(--fundo);
+    color: var(--destaque);
+    border: 2px solid var(--texto);
+    outline: 2px solid var(--destaque);
+    border-radius: 8px;
+    
+}
+
+footer {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    font-weight: bold;
+    color: var(--texto);
+    text-shadow: 2px 2px 30px var(--destaque);
+}
+
+
+footer a {
+    text-decoration: underline;
+    font-weight: bold;
+    color: var(--destaque);
+}

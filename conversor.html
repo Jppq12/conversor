@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor</title>
+    <link rel="stylesheet" href="css/conversor.css">
+</head>
+<body>
+
+    <header>
+        <h1>Conversor de moedas</h1>
+    </header>
+    
+    <main>
+        <section id="conv">
+
+                <div id="seletor-moeda">
+
+                    <div id="moeda1">
+                        <select name="origem" id="m1">
+                            <option value="" selected disabled>Moeda de origem:</option>
+                            <option value="rea">Real</option>
+                            <option value="dol">Dolár</option>
+                            <option value="eur">Euro</option>
+                            <option value="lib">Libra</option>
+                        </select>
+                    </div>
+                    
+                    <div id="moeda2">
+                        <select name="destino" id="m2">
+                            <option value="" selected disabled>Moeda de destino</option>
+                            <option value="BRL">Real</option>
+                            <option value="USD">Dolár</option>
+                            <option value="EUR">Euro</option>
+                            <option value="GBP">Libra</option>
+                        </select>
+                    </div>
+                </div>
+
+            <div id="campo-valor">
+
+                <label for="valor">Digite o valor:</label>
+                <input type="number" name="valor" id="valor" step="any" min="0">
+
+            </div>
+
+            <div id="tela">
+
+                Valor convertido
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Feito por 
+            <a href="https://github.com/Jppq12" target="_blank">João Pedro</a>
+        </p>
+    </footer>
+
+    <script src="js/conversor.js"></script>
+</body>
+</html>
