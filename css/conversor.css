@@ -44,8 +44,8 @@ header::after {
 main {
     padding: 20px;
     display: grid;
-    grid-template-columns: 1fr minmax(0,80vw) 1fr;
-    min-height: 70vh;
+    grid-template-columns: 1fr minmax(0,82vw) 1fr;
+    min-height: 80vh;
     
 }
 
@@ -58,16 +58,21 @@ section#conv {
     padding: 10px 10px;
     box-shadow: 0 10px 35px #00000060,
                 0 0 15px #00b8d425; 
+    gap: 15px;
+    align-items: center;
 }
 
 #seletor-moeda{
     display: flex;
     gap: 15px;
     padding: 10px 0px 20px 0px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
-select,input {
-    padding: 2px;
+select,input,button {
+    padding: 3px;
     background-color: var(--fundo);
     color: var(--destaque);
     border: 2px solid var(--texto);
@@ -75,6 +80,58 @@ select,input {
     border-radius: 8px;
     
 }
+
+input[type="number"] {
+    background-color: var(--elementos);
+    color: var(--destaque);
+    border: 2px solid var(--texto);
+    outline: 2px solid var(--destaque);
+    border-radius: 8px;
+    padding: 5px;
+    font-size: 1rem;
+    width: 40%;
+    height: 90%;
+    transition: .3s;
+}
+
+input[type="number"]:focus {
+    box-shadow: 0 0 8px var(--destaque);
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none !important;
+    appearance: none !important;
+    display: none !important;
+    margin: 0 !important;
+    /*Tirando a setinha interna*/
+}
+
+::placeholder {
+    color: var(--destaque);
+    
+}
+
+
+div#tela {
+    background-color: white;
+    height: 65%;
+    width: 80%;
+    padding: 5px;
+    border:2px solid var(--elementos);
+    outline: 2px solid var(--destaque);
+    border-radius: 8px;
+
+    color: black;
+    font-size: 15px;
+    
+}
+
+#tela a {
+    text-decoration: underline;
+    color: black;
+}
+
 
 footer {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -89,4 +146,9 @@ footer a {
     text-decoration: underline;
     font-weight: bold;
     color: var(--destaque);
+}
+
+@media (min-width: 700px) {
+    
+
 }

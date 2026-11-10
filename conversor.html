@@ -20,16 +20,16 @@
                     <div id="moeda1">
                         <select name="origem" id="m1">
                             <option value="" selected disabled>Moeda de origem:</option>
-                            <option value="rea">Real</option>
-                            <option value="dol">Dolár</option>
-                            <option value="eur">Euro</option>
-                            <option value="lib">Libra</option>
+                             <option value="BRL">Real</option>
+                            <option value="USD">Dolár</option>
+                            <option value="EUR">Euro</option>
+                            <option value="GBP">Libra</option>
                         </select>
                     </div>
                     
                     <div id="moeda2">
                         <select name="destino" id="m2">
-                            <option value="" selected disabled>Moeda de destino</option>
+                            <option value="" selected disabled>Moeda de destino:</option>
                             <option value="BRL">Real</option>
                             <option value="USD">Dolár</option>
                             <option value="EUR">Euro</option>
@@ -41,16 +41,22 @@
             <div id="campo-valor">
 
                 <label for="valor">Digite o valor:</label>
-                <input type="number" name="valor" id="valor" step="any" min="0">
+                <input type="number" name="valor" id="valor" step="any" min="0" placeholder="0,00">
+
+                <button type="button" id="converter" >Converter</button>
 
             </div>
 
             <div id="tela">
-
-                Valor convertido
+                
+                
 
             </div>
 
+            <div id="limpar">
+                <button type="reset" onclick="limpar()">Limpar</button>
+            </div>
+            
         </section>
 
     </main>
