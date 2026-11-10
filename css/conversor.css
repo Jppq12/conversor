@@ -45,7 +45,7 @@ main {
     padding: 20px;
     display: grid;
     grid-template-columns: 1fr minmax(0,82vw) 1fr;
-    min-height: 80vh;
+    min-height: 75vh;
     
 }
 
@@ -89,8 +89,8 @@ input[type="number"] {
     border-radius: 8px;
     padding: 5px;
     font-size: 1rem;
-    width: 30%;
-    height: 90%;
+    width: 40%;
+    height: 80%;
     transition: .3s;
 }
 
@@ -148,3 +148,9 @@ footer a {
     color: var(--destaque);
 }
 
+@media (max-width: 700px) {
+    
+    input[type="number"]{
+        width: 25%;
+    }
+}
