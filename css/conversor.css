@@ -107,6 +107,10 @@ input[type="number"]::-webkit-outer-spin-button {
     /*Tirando a setinha interna*/
 }
 
+button#converter {
+    margin-left: 10px;
+}
+
 ::placeholder {
     color: var(--destaque);
     
@@ -132,6 +136,57 @@ div#tela {
     color: black;
 }
 
+.resultado {
+    padding: 10px 20px;
+    text-align: center;
+}
+
+.resultado h3 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.5em;
+}
+
+.valores {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.valores div {
+    min-width: 0;
+    text-align: center;
+}
+
+.valores h2 {
+    font-size: 1.2rem;
+    margin: 8px 0;
+    overflow-wrap: anywhere;
+    text-decoration: underline;
+}
+
+.valores .convertido {
+    color: var(--destaque);
+    font-size: 1.2rem;
+}
+
+.valores small,
+.informacoes small {
+    color: #000000;
+}
+
+.informacoes {
+    border-top: 1px solid #ffffff25;
+    margin-top: 20px;
+    padding-top: 15px;
+    text-align: center;
+    line-height: 1.8;
+}
+
+.informacoes p {
+    margin-bottom: 5px;
+}
 
 footer {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -152,5 +207,6 @@ footer a {
     
     input[type="number"]{
         width: 25%;
+        margin-right: 5px;
     }
 }

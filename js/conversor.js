@@ -66,6 +66,23 @@ async function converter() {
 
 function mostrarResultado(valor, origem, destino, taxa, data) {
 
+    const nomesMoedas = {
+    BRL: 'Real brasileiro',
+    USD: 'Dólar americano',
+    EUR: 'Euro',
+    GBP: 'Libra esterlina',
+    ARS: 'Peso argentino',
+    PYG: 'Guarani paraguaio',
+    JPY: 'Iene japonês',
+    CNY: 'Yuan chinês',
+    CAD: 'Dólar canadense',
+    AUD: 'Dólar australiano',
+    CHF: 'Franco suíço',
+    MXN: 'Peso mexicano',
+    INR: 'Rúpia indiana',
+    KRW: 'Won sul-coreano'
+}
+
     const convertido = valor * taxa
 
     const formatado = new Intl.NumberFormat('pt-BR', {
@@ -76,16 +93,46 @@ function mostrarResultado(valor, origem, destino, taxa, data) {
     const dataFormatada = data
     ? new Date(data + 'T12:00:00').toLocaleDateString('pt-BR')
     : ''
+
     tela.innerHTML = `
-        <h3>${valor.toFixed(2)} ${origem} equivale a:</h3>
-        <p>${formatado}</p>
-        <p>Taxa: ${taxa.toFixed(2)}</p><br>
-        ${data ? `<small>Cotação de ${dataFormatada}</small><br>
-        <small>
-        Fonte: <a href="https://www.frankfurter.dev/" target="_blank">
-            Frankfurter API</a></small>` 
-            : ''}
-    `
+    <div class="resultado">
+
+        <h3>Resultado da conversão</h3>
+
+        <div class="valores">
+            <div>
+                <small>Você enviou</small>
+                <h2>${new Intl.NumberFormat('pt-BR', {
+                    style: 'currency',
+                    currency: origem
+                }).format(valor)}</h2>
+                <small>${nomesMoedas[origem]}</small>
+            </div>
+
+            <span>→</span>
+
+            <div>
+                <small>Você recebeu</small>
+                <h2 class="convertido">${formatado}</h2>
+                <small>${nomesMoedas[destino]}</small>
+            </div>
+        </div>
+
+        <div class="informacoes">
+            <p>Taxa: 1 ${origem} = ${taxa} ${destino}</p>
+
+            ${data ? `
+                <small>Cotação de ${dataFormatada}</small><br>
+                <small>
+                    Fonte: <a href="https://www.frankfurter.dev/"
+                    target="_blank" rel="noopener noreferrer">
+                    Frankfurter API</a>
+                </small>
+            ` : ''}
+        </div>
+
+    </div>
+`
 }
 
 function limpar(){
