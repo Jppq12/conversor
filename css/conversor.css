@@ -44,31 +44,69 @@ header::after {
 main {
     padding: 20px;
     display: grid;
-    grid-template-columns: 1fr minmax(0,82vw) 1fr;
+    grid-template-columns: 1fr minmax(0,90vw) 1fr;
     min-height: 75vh;
     
 }
 
 section#conv {
     grid-column: 2;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 30% 1fr;
+    grid-template-rows: 1fr 1fr 1fr 50px;
+    align-items: center;
+    
+    
     background-color: var(--elementos);
     border-radius: 8px;
     padding: 10px 10px;
     box-shadow: 0 10px 35px #00000060,
                 0 0 15px #00b8d425; 
-    gap: 15px;
     align-items: center;
 }
 
 #seletor-moeda{
+    grid-column: 1;
+    grid-row: 1;
     display: flex;
     gap: 15px;
     padding: 10px 0px 20px 0px;
-    justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+}
+
+#campo-valor {
+    grid-column: 1;
+    grid-row: 2/span 2;
+
+    display: flex;
+    flex-wrap: wrap;              
+    justify-content: center;
+    align-items: stretch;       
+    gap: 10px;
+    padding: 0 5px; 
+    width: 100%;
+}
+
+#campo-valor label {
+    width: 95%;                  /* o label ocupa a primeira linha sozinho */
+    text-align: start;
+    font-size: 1.2em;
+}
+
+#campo-valor input[type="number"] {
+    flex: 1;                      /* o campo pega o espaço que sobrar ao lado do botão */
+    min-width: 0;                 /* deixa encolher em vez de estourar a coluna */
+    width: auto;
+    height: auto;                 /* o stretch iguala a altura ao botão */
+    padding: 10px;
+    font-size: 1.1rem;
+}
+
+#limpar {
+    grid-column: 2;
+    grid-row: 4;
+    text-align: center; 
 }
 
 select,input,button {
@@ -81,18 +119,7 @@ select,input,button {
     cursor: pointer;
 }
 
-input[type="number"] {
-    background-color: var(--elementos);
-    color: var(--destaque);
-    border: 2px solid var(--texto);
-    outline: 2px solid var(--destaque);
-    border-radius: 8px;
-    padding: 5px;
-    font-size: 1rem;
-    width: 40%;
-    height: 80%;
-    transition: .3s;
-}
+
 
 input[type="number"]:focus {
     box-shadow: 0 0 8px var(--destaque);
@@ -108,7 +135,14 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 button#converter {
-    margin-left: 10px;
+    margin-left: 0;
+    flex-shrink: 0;               /* não deixa o botão encolher quando o campo ocupa espaço */
+    min-width: 110px;
+    padding: 10px 20px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: .3s;
+    
 }
 
 ::placeholder {
@@ -118,9 +152,11 @@ button#converter {
 
 
 div#tela {
+    grid-column: 2;
+    grid-row: 1/span 3;
     background-color: white;
-    height: 65%;
-    width: 80%;
+    height: 90%;
+    width: 95%;
     padding: 5px;
     border:2px solid var(--elementos);
     outline: 2px solid var(--destaque);
@@ -128,6 +164,7 @@ div#tela {
 
     color: black;
     font-size: 15px;
+    margin-left: 15px;
     
 }
 
@@ -204,10 +241,37 @@ footer a {
 }
 
 @media (max-width: 700px) {
-    
-    input[type="number"]{
-        width: 25%;
+
+    main {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr minmax(0,82vw) 1fr;
+    min-height: 75vh;
     }
+
+    section#conv {
+    grid-column: 2;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--elementos);
+    border-radius: 8px;
+    padding: 10px 10px;
+    box-shadow: 0 10px 35px #00000060,
+                0 0 15px #00b8d425; 
+    gap: 15px;
+    align-items: center;
+    }
+    
+    button#converter {
+    margin-left: 0;
+    flex-shrink: 0;               /* não deixa o botão encolher quando o campo ocupa espaço */
+    min-width: 10px;
+    padding: 5px 10px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    transition: .3s;
+    
+}
 
     .resultado h3 {
         text-align: center;
